@@ -3,6 +3,7 @@
 .env
 .env.backup
 .env.production
+.env.example
 .phpactor.json
 .phpunit.result.cache
 /.cursor/
@@ -23,3 +24,13 @@ _ide_helper.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
+/bootstrap/cache/*.php
+/storage/framework/cache/data/
+/storage/framework/sessions/
+/storage/framework/testing/
+/storage/framework/views/
+/storage/logs/
+npm-debug.log
+yarn-error.log
+yarn.lock
+package-lock.json
