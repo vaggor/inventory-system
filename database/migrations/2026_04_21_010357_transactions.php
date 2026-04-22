@@ -19,7 +19,7 @@ return new class extends Migration
             $table->integer('quantity');
             $table->string('reason')->nullable();
             $table->string('reference_code')->nullable();
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 

@@ -16,7 +16,7 @@ return new class extends Migration
             $table->unsignedBigInteger('item_id');
             $table->text('message')->nullable();
             $table->boolean('is_resolved')->default(false);
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 

@@ -15,12 +15,12 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->text('description')->nullable();
+            $table->string('sku')->unique()->nullable();
             $table->unsignedBigInteger('category_id')->nullable();
             $table->unsignedBigInteger('location_id')->nullable();
             $table->integer('quantity')->default(0);
             $table->integer('min_stock_level')->default(5);
-            $table->timestamps('created_at');
-            $table->timestamp('updated_at')->nullable();
+            $table->timestamps();
         });
     }
 
