@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\TransactionController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +20,6 @@ Route::middleware('auth')->group(function () {
     Route::resource('items', ItemController::class);
     Route::resource('users', UserController::class);
     Route::post('/logout', [UserController::class, 'logout'])->name('users.logout');
+    Route::resource('transactions', TransactionController::class);
 });
 

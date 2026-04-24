@@ -9,15 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Item extends Model
 {
-    protected $fillable = [
-        'name',
-        'description',
-        'sku',
-        'category_id',
-        'location_id',
-        'quantity',
-        'min_stock_level'
-    ];
+    protected $guarded = [];
 
     public function category()
     {
