@@ -22,7 +22,8 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
-    public function definition(): array
+
+    /* public function definition(): array
     {
         return [
             'name' => fake()->name(),
@@ -31,6 +32,28 @@ class UserFactory extends Factory
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
         ];
+    } */
+
+    
+    public function definition(): array
+    {
+        return [
+            'name'     => 'John Doe',
+            'email'    => 'jdoe@mail.com',
+            'password' => bcrypt('12345678'),
+            'role'     => 'user',
+        ];
+    }
+
+    // Admin state
+    public function admin(): static
+    {
+        return $this->state([
+            'name'  => 'Admin User',
+            'email' => 'admin@mail.com',
+            'password' => bcrypt('12345678'),
+            'role'  => 'admin',
+        ]);
     }
 
     /**

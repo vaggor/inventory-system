@@ -42,7 +42,11 @@ class UserController extends Controller
             'password' => bcrypt($validatedData['password']),
         ]);
 
-        return redirect()->route('users.login')->with('success', 'User created successfully.');
+        if (!$user) {
+            return redirect()->back()->withInput()->with('error', 'Failed to create user. Please try again.');
+        }
+        
+        return redirect()->route('login')->with('success', 'User created successfully.');
     }
 
     /**
@@ -121,7 +125,7 @@ class UserController extends Controller
             return redirect()->route('items.index')->with('success', 'User logged in successfully.');
         }
         
-        return redirect()->route('users.login')->with('error', 'Invalid credentials.');
+        return redirect()->route('login')->with('error', 'Invalid credentials.');
     }
 
      /**

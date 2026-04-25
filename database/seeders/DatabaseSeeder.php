@@ -18,6 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         // User::factory(10)->create();
+        User::factory()->admin()->create();
+        User::factory()->create(); // default user
         Category::factory(5)->create();
         Location::factory(5)->create();
 

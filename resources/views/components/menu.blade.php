@@ -43,6 +43,7 @@
         </ul>
       </li><!-- End Transaction Nav -->
 
+      @if(auth()->user()->role === 'admin')
       <li class="nav-item">
         <a class="nav-link collapsed" data-bs-target="#category-nav" data-bs-toggle="collapse" href="#">
           <i class="bi bi-tags"></i><span>Category</span><i class="bi bi-chevron-down ms-auto"></i>
@@ -80,3 +81,4 @@
       </li><!-- End Location Nav -->
 
     </ul>
+    @endif
