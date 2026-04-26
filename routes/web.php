@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\LocationController;
 use App\Http\Controllers\TransactionController;
@@ -23,8 +24,7 @@ Route::middleware('auth')->group(function () {
     Route::resource('users', UserController::class);
     Route::post('/logout', [UserController::class, 'logout'])->name('users.logout');
     Route::resource('transactions', TransactionController::class);
-   // Route::resource('categories', \App\Http\Controllers\CategoryController::class);
-    //Route::resource('locations', \App\Http\Controllers\LocationController::class);
+    Route::resource('dashboard', DashboardController::class);
 });
 
 // Admin only routes
