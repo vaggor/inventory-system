@@ -74,15 +74,10 @@ class UserController extends Controller
     {
         $user = Auth::user();
         $validatedData = $request->validate([
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|max:255|unique:users,email,' . $user->id,
-            'password' => 'nullable|string|min:8|confirmed',
+            'name' => 'required|string|max:255'
         ]);
         $user->name = $validatedData['name'];
-        $user->email = $validatedData['email'];
-        if (!empty($validatedData['password'])) {
-            $user->password = bcrypt($validatedData['password']);
-        }
+
         $user->save();
 
         return redirect()->route('users.show', $user)->with('success', 'User updated successfully.');
@@ -98,6 +93,26 @@ class UserController extends Controller
         $user->delete();
         Auth::logout();
         return redirect()->route('users.login')->with('success', 'User deleted successfully.');
+    }
+    
+    /**
+     * Show the change password.
+     */
+    public function changePassword(Request $request, User $user)
+    {
+        $user = Auth::user();
+        $validatedData = $request->validate([
+            'current_password' => 'required|string',
+            'new_password' => 'required|string|min:8|confirmed',
+            'new_password_confirmation' => 'required|string|min:8|same:new_password',
+        ]);
+
+        if (!Auth::attempt(['email' => $user->email, 'password' => $validatedData['current_password']])) {
+            return redirect()->back()->withInput()->with('error', 'Current password is incorrect.');
+        }
+        $user->password = bcrypt($validatedData['new_password']);
+        $user->save();
+        return redirect()->route('users.show', $user)->with('success', 'Password changed successfully.');
     }
 
      /**

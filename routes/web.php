@@ -25,6 +25,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [UserController::class, 'logout'])->name('users.logout');
     Route::resource('transactions', TransactionController::class);
     Route::resource('dashboard', DashboardController::class);
+    Route::get('/profile', [UserController::class, 'show'])->name('users.show');
+    Route::put('/change-password', [UserController::class, 'changePassword'])->name('users.changePassword');
 });
 
 // Admin only routes
