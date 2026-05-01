@@ -13,22 +13,22 @@ A full-stack web application built with **Laravel 13** for managing inventory, s
   </tr>
   <tr>
     <td><img src="public/img/screenshots/dashboard.png" alt="Dashboard" width="480"/></td>
-    <td><img src="public/img/screenshots/items-list.png" alt="Items List" width="480"/></td>
+    <td><img src="public/img/screenshots/items.png" alt="Items List" width="480"/></td>
   </tr>
   <tr>
     <td align="center"><b>Transactions</b></td>
     <td align="center"><b>Category List</b></td>
   </tr>
   <tr>
-    <td><img src="public/img/screenshots/transactions-list.png" alt="Transactions" width="480"/></td>
-    <td><img src="public/img/screenshots/categories-list.png" alt="Categories" width="480"/></td>
+    <td><img src="public/img/screenshots/transactions.png" alt="Transactions" width="480"/></td>
+    <td><img src="public/img/screenshots/category.png" alt="Categories" width="480"/></td>
   </tr>
   <tr>
     <td align="center"><b>Location List</b></td>
     <td align="center"><b>Login</b></td>
   </tr>
   <tr>
-    <td><img src="public/img/screenshots/locations-list.png" alt="Locations" width="480"/></td>
+    <td><img src="public/img/screenshots/locations.png" alt="Locations" width="480"/></td>
     <td><img src="public/img/screenshots/login.png" alt="Login" width="480"/></td>
   </tr>
 </table>
